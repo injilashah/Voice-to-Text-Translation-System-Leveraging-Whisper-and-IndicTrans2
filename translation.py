@@ -22,7 +22,7 @@ def translate_text(transcription, target_lang, src_lang):
         "Marathi": "mar_Deva", "Nepali": "nep_Deva", "Odia": "ory_Orya",
         "Punjabi": "pan_Guru", "Sanskrit": "san_Deva", "Santali(Ol Chiki script)": "sat_Olck",
         "Sindhi(Perso-Arabic script)": "snd_Arab", "Sindhi(Devanagari script)": "snd_Deva",
-        "Tamil": "tam_Taml", "Telugu": "tel_Telu", "Urdu": "urd_Arab"
+        "Tamil": "tam_Taml", "Telugu": "tel_Telu", "Urdu": "urd_Arab","English":"eng_Latn",
     }
     
     if target_lang in mapping:
@@ -81,5 +81,6 @@ def translate_text(transcription, target_lang, src_lang):
 
     # Postprocess the translations
     translations = ip.postprocess_batch(generated_tokens, lang=tgt_lang)
-
+    print(type(translations))
+    translations =str(translations).strip("'")
     return translations
