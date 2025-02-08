@@ -5,7 +5,7 @@ from whisper import load_model, transcribe
 from whisper.audio import load_audio
 
 def transcribe_audio(audio):
-  model = load_model("medium")
+  model = load_model("small")
   #audio_path = "/content/bharat.mp3"
   #audio = load_audio(audio_path)
   result = transcribe(model, audio)
@@ -37,12 +37,15 @@ def transcribe_audio(audio):
     "sd_Deva": "snd_Deva",  # Sindhi (Devanagari script)
     "ta": "tam_Taml",   # Tamil
     "te": "tel_Telu",   # Telugu
-    "ur": "urd_Arab"    # Urdu
+    "ur": "urd_Arab",    # Urdu
+    "en": "eng_Latn",
 }
   if detected_language in whisper_to_indictrans2.keys():
     detected_language = whisper_to_indictrans2[detected_language]
-  else: 
-    return None
+  elif detected_language not in whisper_to_indictrans2.keys():
+    return "Unknown language detected",None
+    
+  
   transcription = result.get("text")  # Adjust key if necessary
 
   return detected_language, transcription
