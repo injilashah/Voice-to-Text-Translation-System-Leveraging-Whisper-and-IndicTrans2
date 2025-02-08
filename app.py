@@ -50,4 +50,4 @@ with gr.Blocks() as demo:
 
 # Launch the Gradio App
 if __name__ == "__main__":
-    demo.launch(share=True , debug = True)
+    demo.launch(share = True , debug = True)
