@@ -1,6 +1,0 @@
-gradio
-torch
-whisper
-transformers
-numpy
-
