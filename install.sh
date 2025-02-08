@@ -6,9 +6,6 @@ sudo apt update
 echo "Installing required system dependencies..."
 sudo apt install -y git wget ffmpeg  # Added ffmpeg
 
-echo "Creating virtual environment..."
-python3 -m venv venv
-source venv/bin/activate
 
 echo "Upgrading pip..."
 pip install --upgrade pip
