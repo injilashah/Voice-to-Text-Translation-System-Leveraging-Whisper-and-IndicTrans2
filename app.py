@@ -37,7 +37,7 @@ def process_translation(transcription, target_lang, detected_lang):
     return translated_text, subtitle_file
 
 # Function to handle transliteration
-def process_transliteration(translated_text):
+'''def process_transliteration(translated_text):
     if not translated_text:
         return "Please translate first!"
     #return transliterate_text(translated_text)
@@ -45,7 +45,7 @@ def process_transliteration(translated_text):
 # Function to update embedded YouTube video player
 def update_video(youtube_url):
     embed_url = get_embed_url(youtube_url)
-    return f"<iframe width='560' height='315' src='{embed_url}' frameborder='0' allowfullscreen></iframe>" if embed_url else ""
+    return f"<iframe width='560' height='315' src='{embed_url}' frameborder='0' allowfullscreen></iframe>" if embed_url else ""'''
 
 # Gradio Interface
 with gr.Blocks() as demo:
@@ -80,9 +80,9 @@ with gr.Blocks() as demo:
             translate_button = gr.Button("Generate Translation", interactive=True)
             translation_output = gr.Textbox(label="Translation", interactive=False)
             subtitle_download = gr.File(label="Download Subtitles", visible=False)
-    with gr.Column():  # Third column for transliteration
+    '''with gr.Column():  # Third column for transliteration
             transliterate_button = gr.Button("Generate Transliteration", interactive=True)
-            transliteration_output = gr.Textbox(label="Transliteration", interactive=False)
+            transliteration_output = gr.Textbox(label="Transliteration", interactive=False)'''
     
     transcribe_button.click(
         process_transcription, 
@@ -96,11 +96,11 @@ with gr.Blocks() as demo:
         outputs=[translation_output,subtitle_download]
     )
     
-    transliterate_button.click(
+    '''transliterate_button.click(
         process_transliteration, 
         inputs=translation_output, 
         outputs=transliteration_output
-    )
+    )'''
 
 # Launch the Gradio App
 if __name__ == "__main__":
