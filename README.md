@@ -12,7 +12,7 @@
   !chmod +x install.sh
   !./install.sh
 
-  #Move to roor directory  
+  #Move to root directory  
   %cd /content/Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2
 
   #Run the Applicaiton
