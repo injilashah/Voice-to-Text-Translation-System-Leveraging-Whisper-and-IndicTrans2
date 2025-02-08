@@ -4,8 +4,8 @@ import sys
 import os
 
 # Get the absolute path of IndicTransToolkit
-indictrans_path = "/content/IndicTrans2/huggingface_interface/IndicTransToolkit/IndicTransToolkit"
 
+indictrans_path ="/content/Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2/IndicTrans2/huggingface_interface/IndicTransToolkit/IndicTransToolkit"
 # Add to Python's module search path
 sys.path.append(indictrans_path)
 
@@ -15,31 +15,31 @@ from processor import IndicProcessor
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 def translate_text(transcription,target_lang,src_lang):
   mapping = {
-    "Assamese": "asm_Beng",   # 
-    "Bengali": "ben_Beng",   # 
-    "Bodo": "brx_Deva",  # 
-    "Dogri": "doi_Deva",  # 
-    "Gujarati": "guj_Gujr",   # 
-    "Hindi": "hin_Deva",   # 
-    "Kannada": "kan_Knda",   # 
-    "Kashmiri(Perso-Arabic script)": "kas_Arab",   #  
-    "Kashmiri(Devanagari script)": "kas_Deva",  #  ()
-    "Konkani": "kok_Deva",  # 
-    "Maithili": "mai_Deva",  # 
-    "Malayalam": "mal_Mlym",   # 
-    "Manipuri(Bengali script)": "mni_Beng",  #  
-    "Manipuri(Meitei script)": "mni_Mtei",  #  ()
-    "Marathi": "mar_Deva",   # 
-    "Nepali": "nep_Deva",   # 
-    "Odia": "ory_Orya",   # 
-    "Punjabi": "pan_Guru",   # 
-    "Sanskrit": "san_Deva",   # 
-    "Santali(Ol Chiki script)": "sat_Olck",  #  
-    "Sindhi(Perso-Arabic script)": "snd_Arab",   #  
-    "Sindhi(Devanagari script)": "snd_Deva",  #  
-    "Tamil": "tam_Taml",   # 
-    "Telugu": "tel_Telu",   # 
-    "Urdu": "urd_Arab"    # 
+    "Assamese": "asm_Beng",    
+    "Bengali": "ben_Beng",    
+    "Bodo": "brx_Deva",   
+    "Dogri": "doi_Deva",   
+    "Gujarati": "guj_Gujr",    
+    "Hindi": "hin_Deva",    
+    "Kannada": "kan_Knda",    
+    "Kashmiri(Perso-Arabic script)": "kas_Arab",     
+    "Kashmiri(Devanagari script)": "kas_Deva", 
+    "Konkani": "kok_Deva",   
+    "Maithili": "mai_Deva",   
+    "Malayalam": "mal_Mlym",    
+    "Manipuri(Bengali script)": "mni_Beng",   
+    "Manipuri(Meitei script)": "mni_Mtei",   
+    "Marathi": "mar_Deva",    
+    "Nepali": "nep_Deva",    
+    "Odia": "ory_Orya",    
+    "Punjabi": "pan_Guru",    
+    "Sanskrit": "san_Deva",    
+    "Santali(Ol Chiki script)": "sat_Olck",    
+    "Sindhi(Perso-Arabic script)": "snd_Arab",    
+    "Sindhi(Devanagari script)": "snd_Deva",    
+    "Tamil": "tam_Taml",    
+    "Telugu": "tel_Telu",    
+    "Urdu": "urd_Arab"   
   }
   if target_lang in mapping:
     tgt_lang = mapping[target_lang]
@@ -49,9 +49,9 @@ def translate_text(transcription,target_lang,src_lang):
   model = AutoModelForSeq2SeqLM.from_pretrained(
     model_name,
     trust_remote_code=True,
-    loadin8bit = True, # performance might slightly vary for bfloat16
+    load_in_8bit=True, 
     attn_implementation="flash_attention_2"
-    ).to(DEVICE)
+    )
 
   ip = IndicProcessor(inference=True)
 
@@ -69,7 +69,7 @@ def translate_text(transcription,target_lang,src_lang):
     padding="longest",
     return_tensors="pt",
     return_attention_mask=True,
-    ).to(DEVICE)
+    )
     # Generate translations using the model
   with torch.no_grad():
     generated_tokens = model.generate(
