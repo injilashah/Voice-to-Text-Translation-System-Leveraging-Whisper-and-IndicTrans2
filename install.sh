@@ -19,7 +19,7 @@ pip install transformers torch numpy gitpython
 pip install whisper  # Explicitly installing Whisper
 pip install bitsandbytes accelerate 
 pip install gradio
-pip install yt_dlp
+pip install yt_dlp tiktoken
 echo "Cloning IndicTrans2 repository..."
 if [ ! -d "IndicTrans2" ]; then
     git clone https://github.com/AI4Bharat/IndicTrans2
