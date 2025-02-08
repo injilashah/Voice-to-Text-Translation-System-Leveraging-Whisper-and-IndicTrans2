@@ -1,5 +1,5 @@
 import gradio as gr
-from transcriptsion import transcribe_audio
+from transcription import transcribe_audio
 from translation import translate_text
 #from transliteration import transliterate_text
 
@@ -50,4 +50,4 @@ with gr.Blocks() as demo:
 
 # Launch the Gradio App
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(share=True , debug = True)
