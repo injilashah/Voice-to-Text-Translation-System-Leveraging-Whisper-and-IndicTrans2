@@ -32,5 +32,5 @@ cd IndicTrans2/huggingface_interface || exit
 
 echo "Running IndicTrans2 install script..."
 bash install.sh
-
+cd..
 echo "Setup complete! You can now use Whisper, IndicTrans2, and Gradio."
