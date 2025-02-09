@@ -28,7 +28,7 @@ def process_transcription(audio_file, youtube_url):
 # Function to handle translation
 def process_translation(transcription, target_lang, detected_lang):
     if not transcription:
-        return "Please transcribe first!", gr.update(interactive=False)
+        return "Please transcribe first!"
     
     translated_text = translate_text(transcription, target_lang, detected_lang)
     return translated_text
