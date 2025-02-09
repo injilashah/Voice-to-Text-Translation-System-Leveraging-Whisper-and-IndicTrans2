@@ -7,6 +7,7 @@
 </div>
 
 ## Getting Started Run the following commands:
+
 ```bash
   #Clone the repo:
   !git clone https://github.com/injilashah/Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2.git
