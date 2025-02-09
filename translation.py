@@ -24,11 +24,21 @@ def translate_text(transcription, target_lang, src_lang):
         "Sindhi(Perso-Arabic script)": "snd_Arab", "Sindhi(Devanagari script)": "snd_Deva",
         "Tamil": "tam_Taml", "Telugu": "tel_Telu", "Urdu": "urd_Arab","English":"eng_Latn",
     }
-    
     if target_lang in mapping:
-        tgt_lang = mapping[target_lang]
+      tgt_lang = mapping[target_lang]
+      
+    if src_lang == tgt_lang:
+      return "Detected Language and Target Language cannot be same"
+
+    if src_lang == "eng_Latn":
+      model_name = "prajdabre/rotary-indictrans2-en-indic-1B"
+    else:
+      model_name ="prajdabre/rotary-indictrans2-indic-en-1B"
+        
     
-    model_name = "ai4bharat/indictrans2-indic-indic-1B"
+    
+    
+    
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 
     # Load model in 8-bit quantization
