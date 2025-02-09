@@ -1,5 +1,5 @@
 
-# Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2.
+# Voice-to-Text-Translation-System:Leveraging-Whisper-and-IndicTrans2
 
 # DEMO
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
