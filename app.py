@@ -4,9 +4,9 @@ from translation import translate_text
 
 from process_yt_video import download_audio,get_embed_url
 from create_srt import create_srt
-from custom_theme import Seafoam
+from custom_theme import CustomTheme
 
-theme = Seafoam()
+theme = CustomTheme()
 
 # Function to handle transcription
 def process_transcription(audio_file, youtube_url):
@@ -42,10 +42,10 @@ def process_subtitle(transcription, translation):
     return "Subtitle generated successfully!", subtitle_file
 
 # Function to handle transliteration
-def process_transliteration(translated_text):
+'''def process_transliteration(translated_text):
     if not translated_text:
         return "Please translate first!"
-    return "hello"
+    return "hello"'''
 
 # Function to update embedded YouTube video player
 def update_video(youtube_url):

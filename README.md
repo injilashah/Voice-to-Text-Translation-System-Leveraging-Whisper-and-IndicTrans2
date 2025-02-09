@@ -1,5 +1,21 @@
-<<<<<<< HEAD
+
 # Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2.
-=======
-# Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2
->>>>>>> f8742d58671ab5d536fa760707271a3500178768
+## Getting Started Run the following commands:
+```bash
+  #Clone the repo:
+  !git clone https://github.com/injilashah/Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2.git
+
+  #Move to the directory path
+  %cd /content/Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2
+
+  # Install Dependencies
+  !chmod +x install.sh
+  !./install.sh
+
+  #Move to root directory  
+  %cd /content/Voice-to-Text-Translation-System-Leveraging-Whisper-and-IndicTrans2
+
+  #Run the Applicaiton
+  python run app.py
+```
+
